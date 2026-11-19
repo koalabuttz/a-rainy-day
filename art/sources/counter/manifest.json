@@ -1,0 +1,16 @@
+{
+  "provider": "retrodiffusion",
+  "sample": "room-counter",
+  "endpoint": "/inferences",
+  "request": {
+    "prompt": "Single isolated 2D game sprite, reception desk for a woodland inn. The desk spans the canvas horizontally from left to right. No camera yaw, front and rear counter edges are exactly parallel to the horizon. A little of the flat top is visible above its front wall. Very wide, low and skinny shape, body width about three to four times its total height. Dark warm brown timber, medium chestnut upper surface, simple alternating front panels, tiny bell and guestbook neatly on top. Low resolution, restrained pixel shading. Blank transparent margins and no other objects or room.",
+    "prompt_style": "rd_core__topdown",
+    "width": 80,
+    "height": 32,
+    "num_images": 1,
+    "seed": 574,
+    "remove_bg": true
+  },
+  "status": "completed",
+  "output": "assets/counter.png"
+}

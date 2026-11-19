@@ -1,0 +1,12 @@
+{
+  "frog.png": "art/sources/frog/manifest.json",
+  "innkeeper.png": "art/sources/innkeeper/manifest.json",
+  "floor.png": "art/sources/floor/manifest.json",
+  "wall.png": "art/sources/wall/manifest.json",
+  "traveler.png": "art/sources/traveler-walk/manifest.json",
+  "counter.png": "art/sources/counter/manifest.json",
+  "rug.png": "art/sources/rug/manifest.json",
+  "window.png": "art/sources/window/manifest.json",
+  "threshold.png": "art/sources/threshold/manifest.json",
+  "wall-cap.png": "art/sources/wall-cap/manifest.json"
+}

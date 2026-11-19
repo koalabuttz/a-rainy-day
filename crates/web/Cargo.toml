@@ -1,0 +1,10 @@
+[package]
+name = "rainy-day-web"
+version.workspace = true
+edition.workspace = true
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+rainy-day-room = { path = "../room" }

@@ -1,0 +1,12 @@
+[package]
+name = "rainy-day-vita"
+version.workspace = true
+edition.workspace = true
+
+[package.metadata.vita]
+title_id = "RAINYDAY1"
+title_name = "a rainy day"
+
+[target.'cfg(target_os = "vita")'.dependencies]
+rainy-day-room = { path = "../room" }
+sdl2 = { version = "0.38", default-features = false, features = ["static-link", "use-pkgconfig"] }

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>a rainy day</title>
+    <style>/* ROOM_STYLE */</style>
+  </head>
+  <body>
+    <main>
+      <h1>a rainy day</h1>
+      <canvas id="room" width="320" height="176" role="img" aria-label="The forest inn. The traveler is at the entrance, the innkeeper is behind the counter, and a little frog is off to the right."></canvas>
+      <p id="status" role="status">Opening the inn…</p>
+      <p class="keyboard">Move with WASD or the arrow keys. Press E to interact.</p>
+      <button type="button" id="interact" hidden></button>
+      <section id="dialogue" aria-labelledby="speaker" hidden>
+        <h2 id="speaker"></h2>
+        <p id="line" aria-live="polite"></p>
+        <div id="choices"></div>
+        <form id="say">
+          <label for="question">Say something</label>
+          <input id="question" maxlength="160" autocomplete="off">
+          <button type="submit">Ask</button>
+          <p id="reply" role="status" hidden></p>
+        </form>
+      </section>
+      <div class="directions" role="group" aria-label="Movement controls">
+        <button type="button" data-direction="up" aria-label="Move up">↑</button>
+        <button type="button" data-direction="left" aria-label="Move left">←</button>
+        <button type="button" data-direction="down" aria-label="Move down">↓</button>
+        <button type="button" data-direction="right" aria-label="Move right">→</button>
+      </div>
+    </main>
+    <script id="room-wasm" type="application/octet-stream">ROOM_WASM</script>
+    <script type="module">/* ROOM_SCRIPT */</script>
+  </body>
+</html>

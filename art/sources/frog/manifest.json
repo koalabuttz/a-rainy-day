@@ -1,0 +1,21 @@
+{
+  "provider": "pixellab",
+  "sample": "room-frog",
+  "endpoint": "/create-image-pixen",
+  "request": {
+    "description": "Cozy whimsical fantasy inn game, crisp hand-placed-looking pixel art, readable chunky shapes, limited muted moss green and warm brown palette, restrained shading, no text, no interface, no blur. Single tiny ordinary frog for a 16-pixel floor grid. Low top-down RPG camera, facing the viewer. Flat squat moss-green bean shape with two huge protruding pale cream eyes, big dark pupils and a single thin crooked frown. Awkward, alarmed little expression. Dark olive outline, chunky flat pixel clusters, about six colors. Whole body with one pixel of transparent margin, no shadow, no props or scenery.",
+    "image_size": {
+      "width": 16,
+      "height": 16
+    },
+    "detail": "low detail",
+    "outline": "single color outline",
+    "no_background": true,
+    "seed": 104,
+    "enhance_prompt": false,
+    "view": "low top-down",
+    "direction": "south"
+  },
+  "status": "completed",
+  "output": "assets/frog.png"
+}

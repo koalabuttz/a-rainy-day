@@ -1,0 +1,59 @@
+{
+  "provider": "pixellab",
+  "sample": "room-traveler-walk",
+  "endpoint": "/characters/animations",
+  "request": {
+    "mode": "template",
+    "template_animation_id": "walking",
+    "animation_name": "Traveler walk"
+  },
+  "status": "completed",
+  "source_manifest": "art/sources/traveler-rotations/manifest.json",
+  "south_review": {
+    "reference": "art/sources/traveler-rotations/room-traveler-south.png",
+    "trial_endpoint": "/animate-with-text-v3",
+    "trial_request": {
+      "action": "A seamless, restrained two-step walk cycle in place, straight south towards the camera. Fixed low top-down front view. The exact same hood opening, both eyes, and the front of the evergreen coat remain clearly visible and centered in all six frames. The head and torso stay facing straight towards us. The two russet boots alternate which one steps towards the camera, with small opposite swings of the hands. Keep the original very small pixel sprite, its original tight palette and consistent proportions on a transparent background. No turning or rotating in any frame.",
+      "frame_count": 6,
+      "seed": 571,
+      "no_background": true,
+      "drift_threshold": 0,
+      "enhance_prompt": false
+    },
+    "changes": "Retained the standing hood and coat, redrew alternating contact, recoil, and passing poses, and adjusted the arm swing by one pixel. The idle pose, canvas, gait timing, and foot baseline are preserved."
+  },
+  "outputs": {
+    "north": [
+      "art/sources/traveler-walk/walk-north-00.png",
+      "art/sources/traveler-walk/walk-north-01.png",
+      "art/sources/traveler-walk/walk-north-02.png",
+      "art/sources/traveler-walk/walk-north-03.png",
+      "art/sources/traveler-walk/walk-north-04.png",
+      "art/sources/traveler-walk/walk-north-05.png"
+    ],
+    "south": [
+      "art/sources/traveler-walk/walk-south-00.png",
+      "art/sources/traveler-walk/walk-south-01.png",
+      "art/sources/traveler-walk/walk-south-02.png",
+      "art/sources/traveler-walk/walk-south-03.png",
+      "art/sources/traveler-walk/walk-south-04.png",
+      "art/sources/traveler-walk/walk-south-05.png"
+    ],
+    "west": [
+      "art/sources/traveler-walk/walk-west-00.png",
+      "art/sources/traveler-walk/walk-west-01.png",
+      "art/sources/traveler-walk/walk-west-02.png",
+      "art/sources/traveler-walk/walk-west-03.png",
+      "art/sources/traveler-walk/walk-west-04.png",
+      "art/sources/traveler-walk/walk-west-05.png"
+    ],
+    "east": [
+      "art/sources/traveler-walk/walk-east-00.png",
+      "art/sources/traveler-walk/walk-east-01.png",
+      "art/sources/traveler-walk/walk-east-02.png",
+      "art/sources/traveler-walk/walk-east-03.png",
+      "art/sources/traveler-walk/walk-east-04.png",
+      "art/sources/traveler-walk/walk-east-05.png"
+    ]
+  }
+}

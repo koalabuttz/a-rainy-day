@@ -1,0 +1,21 @@
+{
+  "provider": "pixellab",
+  "sample": "room-window",
+  "endpoint": "/create-image-pixen",
+  "request": {
+    "description": "Cozy whimsical fantasy inn game, crisp hand-placed-looking pixel art, readable chunky shapes, limited muted moss green and warm brown palette, restrained shading, no text, no interface, no blur. One short wide rectangular two-pane window mounted in the rear wall of a cozy forest inn, seen straight on from a slightly raised top-down RPG camera. Simple chestnut wooden sash, muted deep slate-teal panes, just a few silver blue rain streaks and a narrow oak sill. Dark trim, clean compact shape, no curtains, flowers, scenery, plaster wall or outdoor scene. Window only on transparent background with padding all around.",
+    "image_size": {
+      "width": 48,
+      "height": 32
+    },
+    "detail": "low detail",
+    "outline": "selective outline",
+    "no_background": true,
+    "seed": 576,
+    "enhance_prompt": false,
+    "view": "low top-down",
+    "direction": "south"
+  },
+  "status": "completed",
+  "output": "assets/window.png"
+}

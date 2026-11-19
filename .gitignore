@@ -1,0 +1,7 @@
+/target/
+/art/experiments/
+/.env
+/.env.*
+/.venv/
+/a-rainy-day-voice.txt
+__pycache__/

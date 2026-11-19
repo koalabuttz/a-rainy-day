@@ -1,0 +1,21 @@
+{
+  "provider": "pixellab",
+  "sample": "room-rug",
+  "endpoint": "/create-image-pixen",
+  "request": {
+    "description": "Cozy whimsical fantasy inn game, crisp hand-placed-looking pixel art, readable chunky shapes, limited muted moss green and warm brown palette, restrained shading, no text, no interface, no blur. One long narrow rectangular woven runner rug for the entrance to a cozy forest inn, overhead 2D RPG game asset, directly above. Flat textile, horizontal, nearly four times as wide as tall. Dusty burgundy and muted ocher geometric stitched border, three simple diamond ornaments, a few pixels of cream fringe on the short ends, large plain areas. Crisp squared corners, simple bold pixels. Full rug centered on a transparent canvas with an empty margin, no floor, interior or shadow.",
+    "image_size": {
+      "width": 96,
+      "height": 32
+    },
+    "detail": "low detail",
+    "outline": "selective outline",
+    "no_background": true,
+    "seed": 902,
+    "enhance_prompt": false,
+    "view": "high top-down",
+    "direction": "south"
+  },
+  "status": "completed",
+  "output": "assets/rug.png"
+}

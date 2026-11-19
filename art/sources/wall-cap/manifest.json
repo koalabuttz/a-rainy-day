@@ -1,0 +1,18 @@
+{
+  "provider": "retrodiffusion",
+  "sample": "room-wall-cap",
+  "endpoint": "/inferences",
+  "request": {
+    "prompt": "Cozy whimsical fantasy inn game, crisp hand-placed-looking pixel art, readable chunky shapes, limited muted moss green and warm brown palette, restrained shading, no text, no interface, no blur. A single tile of a dark chestnut wooden wall cap seen directly from overhead in a 16-bit top-down room. Continuous long horizontal dark brown wood grain with two thin horizontal trim bands, one muted caramel line along the top, dark base along the bottom. Flat even light, subtle pixel clusters. Fully filled opaque square, repeatable along the horizontal axis. No objects, leaves, cracks, bevel on the sides or corner piece.",
+    "prompt_style": "rd_fast__low_res",
+    "width": 16,
+    "height": 16,
+    "num_images": 1,
+    "seed": 982,
+    "remove_bg": false,
+    "tile_x": true,
+    "bypass_prompt_expansion": true
+  },
+  "status": "completed",
+  "output": "assets/wall-cap.png"
+}

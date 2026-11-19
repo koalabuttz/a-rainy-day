@@ -1,0 +1,18 @@
+{
+  "provider": "retrodiffusion",
+  "sample": "room-floor",
+  "endpoint": "/inferences",
+  "request": {
+    "prompt": "Cozy whimsical fantasy inn game, crisp hand-placed-looking pixel art, readable chunky shapes, limited muted moss green and warm brown palette, restrained shading, no text, no interface, no blur. A seamless warm walnut wooden plank floor texture tile for the interior of a forest inn in a top-down RPG. True overhead. Wide horizontal worn planks in muted honey brown, understated low contrast seams, a few subtle marks of wood grain. Flat even light, fully covers the square and continues at each edge. No border, objects, gaps, nails, foliage, or individual loose boards.",
+    "prompt_style": "rd_tile__single_tile",
+    "width": 16,
+    "height": 16,
+    "num_images": 1,
+    "seed": 622,
+    "remove_bg": false,
+    "tile_x": true,
+    "tile_y": true
+  },
+  "status": "completed",
+  "output": "assets/floor.png"
+}

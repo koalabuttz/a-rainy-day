@@ -1,0 +1,17 @@
+{
+  "provider": "retrodiffusion",
+  "sample": "room-threshold",
+  "endpoint": "/inferences",
+  "request": {
+    "prompt": "Cozy whimsical fantasy inn game, crisp hand-placed-looking pixel art, readable chunky shapes, limited muted moss green and warm brown palette, restrained shading, no text, no interface, no blur. One wide low stone doorstep viewed straight down, a simple overhead 16-bit floor object for a forest inn entrance. Long horizontal rectangular shape, nearly four times wider than tall, two shallow parallel treads, weathered muted slate gray-green with lighter upper edge. A few chunky flat stone pixels. Whole object centered with transparent padding. No closed door, arch, wall, grass, road or room.",
+    "prompt_style": "rd_fast__low_res",
+    "width": 48,
+    "height": 24,
+    "num_images": 1,
+    "seed": 710,
+    "remove_bg": true,
+    "bypass_prompt_expansion": true
+  },
+  "status": "completed",
+  "output": "assets/threshold.png"
+}

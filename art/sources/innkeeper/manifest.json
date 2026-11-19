@@ -1,0 +1,21 @@
+{
+  "provider": "pixellab",
+  "sample": "room-innkeeper",
+  "endpoint": "/create-image-pixen",
+  "request": {
+    "description": "Cozy whimsical fantasy inn game, crisp hand-placed-looking pixel art, readable chunky shapes, limited muted moss green and warm brown palette, restrained shading, no text, no interface, no blur. Single human fantasy tavern innkeeper, a squat chunky 2D RPG game sprite viewed from slightly above, south-facing. Full figure from hair to both shoes visible with generous empty margins. Brown hair parted in the middle, cream rolled sleeves, maroon waistcoat, cocoa apron, dark boots, a strained welcoming smile. Warm muted colors, broad clean pixel clusters, simple shading. One person standing with hands at sides, isolated on transparent background. No furniture, objects, or room.",
+    "image_size": {
+      "width": 32,
+      "height": 32
+    },
+    "detail": "low detail",
+    "outline": "selective outline",
+    "no_background": true,
+    "seed": 658,
+    "enhance_prompt": false,
+    "view": "low top-down",
+    "direction": "south"
+  },
+  "status": "completed",
+  "output": "assets/innkeeper.png"
+}

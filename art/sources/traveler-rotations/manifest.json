@@ -1,0 +1,28 @@
+{
+  "provider": "pixellab",
+  "sample": "room-traveler",
+  "endpoint": "/create-character-with-4-directions",
+  "request": {
+    "description": "Cozy whimsical fantasy inn game, crisp hand-placed-looking pixel art, readable chunky shapes, limited muted moss green and warm brown palette, restrained shading, no text, no interface, no blur. Full-body sprite of a weary young adult traveler in an evergreen hooded rain cape and dark trousers, with a small tan leather backpack worn on their back and russet boots. Hood stays up and has a pale moss rim. Slightly squat storybook RPG proportions, hands relaxed at sides. Simple color clusters, toned-down highlights. This is the same person seen from four directions. Isolated figure with clear shoes and silhouette.",
+    "image_size": {
+      "width": 24,
+      "height": 24
+    },
+    "view": "low top-down",
+    "proportions": {
+      "type": "preset",
+      "name": "chibi"
+    },
+    "detail": "low detail",
+    "outline": "selective outline",
+    "shading": "basic shading",
+    "seed": 337
+  },
+  "status": "completed",
+  "outputs": {
+    "north": "art/sources/traveler-rotations/room-traveler-north.png",
+    "south": "art/sources/traveler-rotations/room-traveler-south.png",
+    "west": "art/sources/traveler-rotations/room-traveler-west.png",
+    "east": "art/sources/traveler-rotations/room-traveler-east.png"
+  }
+}

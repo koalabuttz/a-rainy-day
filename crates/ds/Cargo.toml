@@ -1,0 +1,10 @@
+[package]
+name = "rainy-day-ds"
+version.workspace = true
+edition.workspace = true
+
+[lib]
+crate-type = ["staticlib"]
+
+[target.'cfg(target_os = "none")'.dependencies]
+rainy-day-room = { path = "../room" }

@@ -1,0 +1,104 @@
+{
+  "canvas": {"width": 64, "height": 64},
+  "style": "Cozy whimsical fantasy inn game, crisp hand-placed-looking pixel art, readable chunky shapes, limited muted moss green and warm brown palette, restrained shading, no text, no interface, no blur.",
+  "samples": {
+    "frog": {
+      "kind": "sprite",
+      "prompt": "One very small round moss-green frog, comically wide slightly worried eyes, squat body and tiny feet, charming awkward expression. An ordinary little frog, not humanoid, no clothes. Single full-body game sprite centered, viewed from a low top-down RPG camera, facing south. No scenery.",
+      "review": "The frog's expression reads at play size, its silhouette looks like a little frog, and its apparent scale fits the innkeeper and floor grid."
+    },
+    "innkeeper": {
+      "kind": "sprite",
+      "prompt": "One normal-looking human innkeeper with a burgundy waistcoat, cream shirt and brown apron, attempting an overly formal friendly welcome, slightly strained smile. Human face and proportions with no frog features. Single full-body game sprite centered, viewed from a low top-down RPG camera, facing south. No scenery.",
+      "review": "The full figure is isolated, with no props or scenery. The camera matches the room. The disguise reads as human at play size."
+    },
+    "inn-materials": {
+      "kind": "study",
+      "prompt": "A small material study for a top-down forest inn: a clear 2 by 2 grid of four square 32-pixel tiles. Upper left warm wooden floor planks, upper right worn stone hearth floor, lower left dark timber interior wall, lower right cream plaster interior wall with timber trim. No furniture, no characters, no labels. Even lighting. Fill the entire canvas.",
+      "review": "Use this study to pick materials and colors. Review any eventual tile set in a room layout with repeated floor tiles, walls and corners."
+    },
+    "room-frog": {
+      "kind": "sprite",
+      "canvas": {"width": 16, "height": 16},
+      "prompt": "Single tiny ordinary frog for a 16-pixel floor grid. Low top-down RPG camera, facing the viewer. Flat squat moss-green bean shape with two huge protruding pale cream eyes, big dark pupils and a single thin crooked frown. Awkward, alarmed little expression. Dark olive outline, chunky flat pixel clusters, about six colors. Whole body with one pixel of transparent margin, no shadow, no props or scenery.",
+      "pixellab": {"detail": "low detail", "outline": "single color outline", "seed": 104},
+      "retrodiffusion": {"seed": 104, "bypass_prompt_expansion": true},
+      "review": "Look for visible eye whites, pupils, and mouth at 1x. Compare against the human on the same floor grid."
+    },
+    "room-innkeeper": {
+      "kind": "sprite",
+      "canvas": {"width": 32, "height": 32},
+      "prompt": "Single human fantasy tavern innkeeper, a squat chunky 2D RPG game sprite viewed from slightly above, south-facing. Full figure from hair to both shoes visible with generous empty margins. Brown hair parted in the middle, cream rolled sleeves, maroon waistcoat, cocoa apron, dark boots, a strained welcoming smile. Warm muted colors, broad clean pixel clusters, simple shading. One person standing with hands at sides, isolated on transparent background. No furniture, objects, or room.",
+      "pixellab": {"detail": "low detail", "outline": "selective outline", "seed": 521},
+      "retrodiffusion": {"seed": 521, "bypass_prompt_expansion": true},
+      "review": "Check both feet, transparent margins, pose, and readability behind the counter at 1x."
+    },
+    "room-floor": {
+      "kind": "tile",
+      "canvas": {"width": 16, "height": 16},
+      "prompt": "A seamless warm walnut wooden plank floor texture tile for the interior of a forest inn in a top-down RPG. True overhead. Wide horizontal worn planks in muted honey brown, understated low contrast seams, a few subtle marks of wood grain. Flat even light, fully covers the square and continues at each edge. No border, objects, gaps, nails, foliage, or individual loose boards.",
+      "retrodiffusion": {"prompt_style": "rd_tile__single_tile", "seed": 622, "tile_x": true, "tile_y": true},
+      "review": "Repeat in both directions. Check for seams, a strong grid or repeated marks that pull focus from the sprites."
+    },
+    "room-wall": {
+      "kind": "tile",
+      "canvas": {"width": 16, "height": 16},
+      "prompt": "A straight interior wall section for the rear wall of a top-down forest inn RPG room, facing the viewer. Warm buff plaster across the upper half, muted walnut wainscoting across the lower half and a narrow dark wooden baseboard at the floor. Simple restrained horizontal bands of color continuous across left and right borders. Fully opaque. No door, window, frame, corner, objects or outside landscape.",
+      "retrodiffusion": {"prompt_style": "rd_fast__low_res", "seed": 822, "tile_x": true, "bypass_prompt_expansion": true},
+      "review": "Repeat horizontally. Plaster and baseboard should continue cleanly between tiles and sit naturally beside the room's posts and windows."
+    },
+    "room-traveler": {
+      "kind": "character",
+      "canvas": {"width": 24, "height": 24},
+      "export_canvas": {"width": 36, "height": 36},
+      "prompt": "Full-body sprite of a weary young adult traveler in an evergreen hooded rain cape and dark trousers, with a small tan leather backpack worn on their back and russet boots. Hood stays up and has a pale moss rim. Slightly squat storybook RPG proportions, hands relaxed at sides. Simple color clusters, toned-down highlights. This is the same person seen from four directions. Isolated figure with clear shoes and silhouette.",
+      "pixellab": {"detail": "low detail", "outline": "selective outline", "shading": "basic shading", "seed": 337},
+      "review": "The teal cape and tan backpack should identify the player from all four directions. Check foot alignment and scale while moving."
+    },
+    "room-counter": {
+      "kind": "sprite",
+      "canvas": {"width": 80, "height": 32},
+      "prompt": "One isolated cozy inn reception counter, matching a 16px tile RPG low top-down game. Long straight front edge, almost four times wider than tall. Orthographic view facing the front with the horizontal countertop visible from slightly above. Warm chestnut hardwood with subdued brown paneling. A tiny brass desk bell and a small closed guest ledger on the top. Clean rectangle, evenly lit, compact silhouette. Empty transparent canvas around the full object, generous padding. No floor, wall, room, stools or other objects.",
+      "pixellab": {"detail": "low detail", "outline": "selective outline", "seed": 701},
+      "retrodiffusion": {
+        "prompt_style": "rd_core__topdown",
+        "seed": 574,
+        "prompt": "Single isolated 2D game sprite, reception desk for a woodland inn. The desk spans the canvas horizontally from left to right. No camera yaw, front and rear counter edges are exactly parallel to the horizon. A little of the flat top is visible above its front wall. Very wide, low and skinny shape, body width about three to four times its total height. Dark warm brown timber, medium chestnut upper surface, simple alternating front panels, tiny bell and guestbook neatly on top. Low resolution, restrained pixel shading. Blank transparent margins and no other objects or room."
+      },
+      "review": "The wide counter faces the traveler. Its base fits the collision footprint and small items stay on the tabletop."
+    },
+    "room-rug": {
+      "kind": "sprite",
+      "canvas": {"width": 96, "height": 32},
+      "prompt": "One long narrow rectangular woven runner rug for the entrance to a cozy forest inn, overhead 2D RPG game asset, directly above. Flat textile, horizontal, nearly four times as wide as tall. Dusty burgundy and muted ocher geometric stitched border, three simple diamond ornaments, a few pixels of cream fringe on the short ends, large plain areas. Crisp squared corners, simple bold pixels. Full rug centered on a transparent canvas with an empty margin, no floor, interior or shadow.",
+      "pixellab": {"detail": "low detail", "outline": "selective outline", "view": "high top-down", "seed": 902},
+      "review": "The runner reads as a walkable flat surface and gives the entrance a warm accent."
+    },
+    "room-window": {
+      "kind": "sprite",
+      "canvas": {"width": 48, "height": 32},
+      "prompt": "One short wide rectangular two-pane window mounted in the rear wall of a cozy forest inn, seen straight on from a slightly raised top-down RPG camera. Simple chestnut wooden sash, muted deep slate-teal panes, just a few silver blue rain streaks and a narrow oak sill. Dark trim, clean compact shape, no curtains, flowers, scenery, plaster wall or outdoor scene. Window only on transparent background with padding all around.",
+      "pixellab": {"detail": "low detail", "outline": "selective outline", "seed": 576},
+      "retrodiffusion": {
+        "seed": 384,
+        "bypass_prompt_expansion": true,
+        "prompt": "A single isolated pixel-art inn window, front elevation. Short wide rectangle with two slate blue glass panes, a few diagonal silver rain streaks, a brown crossbar and dark brown frame. Camera straight on, frame lines exactly horizontal and vertical. The window frame is the only object. Fully transparent blank space all the way around. Clean silhouette, no bricks, no outside plants, no surrounding wall or shadows. Muted teal and chestnut palette."
+      },
+      "review": "The cool panes pick up the rainy mood. The lower sill should sit on the back wall without covering the floor."
+    },
+    "room-wall-cap": {
+      "kind": "tile",
+      "canvas": {"width": 16, "height": 16},
+      "prompt": "A single tile of a dark chestnut wooden wall cap seen directly from overhead in a 16-bit top-down room. Continuous long horizontal dark brown wood grain with two thin horizontal trim bands, one muted caramel line along the top, dark base along the bottom. Flat even light, subtle pixel clusters. Fully filled opaque square, repeatable along the horizontal axis. No objects, leaves, cracks, bevel on the sides or corner piece.",
+      "retrodiffusion": {"prompt_style": "rd_fast__low_res", "seed": 982, "tile_x": true, "bypass_prompt_expansion": true},
+      "review": "The cap wraps the front and sides at the same thickness and repeats without distinct joints."
+    },
+    "room-threshold": {
+      "kind": "sprite",
+      "canvas": {"width": 48, "height": 24},
+      "prompt": "One wide low stone doorstep viewed straight down, a simple overhead 16-bit floor object for a forest inn entrance. Long horizontal rectangular shape, nearly four times wider than tall, two shallow parallel treads, weathered muted slate gray-green with lighter upper edge. A few chunky flat stone pixels. Whole object centered with transparent padding. No closed door, arch, wall, grass, road or room.",
+      "retrodiffusion": {"prompt_style": "rd_fast__low_res", "seed": 710, "bypass_prompt_expansion": true},
+      "review": "The step reads as the entrance at the bottom of the room and sits between the two foreground walls."
+    }
+  }
+}

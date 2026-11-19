@@ -1,0 +1,18 @@
+{
+  "provider": "retrodiffusion",
+  "sample": "room-wall",
+  "endpoint": "/inferences",
+  "request": {
+    "prompt": "Cozy whimsical fantasy inn game, crisp hand-placed-looking pixel art, readable chunky shapes, limited muted moss green and warm brown palette, restrained shading, no text, no interface, no blur. A straight interior wall section for the rear wall of a top-down forest inn RPG room, facing the viewer. Warm buff plaster across the upper half, muted walnut wainscoting across the lower half and a narrow dark wooden baseboard at the floor. Simple restrained horizontal bands of color continuous across left and right borders. Fully opaque. No door, window, frame, corner, objects or outside landscape.",
+    "prompt_style": "rd_fast__low_res",
+    "width": 16,
+    "height": 16,
+    "num_images": 1,
+    "seed": 822,
+    "remove_bg": false,
+    "tile_x": true,
+    "bypass_prompt_expansion": true
+  },
+  "status": "completed",
+  "output": "assets/wall.png"
+}
