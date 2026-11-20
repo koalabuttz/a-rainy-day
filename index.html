@@ -595,6 +595,11 @@ function bindDialogue(room, draw) {
         !event.ctrlKey && !event.metaKey && !event.altKey) open();
   });
   question.addEventListener("focus", clearInput);
+  if (questionReview) {
+    question.addEventListener("input", () => {
+      if (!pending) showStatus("");
+    });
+  }
   window.addEventListener("resize", updateLineFocus);
   choices.addEventListener("focusin", (event) => {
     for (const button of choices.children) {
@@ -675,6 +680,7 @@ function bindDialogue(room, draw) {
 
     let applied = false;
     let generatedProse = false;
+    let aiStatus;
     if (proseOnly) {
       writeInput(bytes);
       applied = room.room_submit_text(bytes.length);
@@ -686,7 +692,11 @@ function bindDialogue(room, draw) {
       question.readOnly = true;
       ask.disabled = true;
       showStatus(proseOnly ? `${speaker.textContent} is listening…` : "The innkeeper is listening…");
-      const timer = setTimeout(() => request.controller.abort(), 4000);
+      let timedOut = false;
+      const timer = setTimeout(() => {
+        timedOut = true;
+        request.controller.abort();
+      }, 4000);
       let result;
       const payload = { text, topics };
       if (recent?.revision === request.revision) payload.recent = recent.exchange;
@@ -699,22 +709,34 @@ function bindDialogue(room, draw) {
           body: JSON.stringify(payload),
           signal: request.controller.signal,
         });
-        if (response.ok) result = await response.json();
+        if (response.status === 429) {
+          aiStatus = "AI is rate limited. Please try again shortly.";
+        } else if (response.status === 408 || response.status === 504) {
+          aiStatus = "AI timed out.";
+        } else {
+          aiStatus = "AI returned no usable answer.";
+          if (response.ok) result = await response.json();
+        }
       } catch {
-        // This turn can still use the local text matcher.
+        aiStatus = timedOut ? "AI timed out." : aiStatus ?? "Couldn't connect to AI.";
       } finally {
         clearTimeout(timer);
       }
       if (pending !== request || room.room_dialogue_revision() !== request.revision) return;
       clearPending();
-      applied = applyResult(result, request.revision, bytes);
+      if (!questionReview || result?.reply !== "clarify") {
+        applied = applyResult(result, request.revision, bytes);
+      }
+      if (applied) aiStatus = undefined;
       generatedProse = proseOnly && applied && typeof result?.answer === "string";
     }
     if (!applied && !proseOnly) {
       writeInput(bytes);
       applied = room.room_submit_text(bytes.length);
     }
-    if (!applied && topics.length && (endpoint || proseOnly)) {
+    const hostedFailure = questionReview ? aiStatus : undefined;
+    // Keep the counter's line and draft if hosted AI failed and there was no local match.
+    if (!applied && topics.length && (endpoint || proseOnly) && (proseOnly || !hostedFailure)) {
       applied = applyResult({ reply: "clarify" }, room.room_dialogue_revision(), bytes);
     }
     if (applied) {
@@ -728,9 +750,10 @@ function bindDialogue(room, draw) {
       showStatus("");
       draw();
       refresh();
+      if (hostedFailure && !dialogue.hidden && !form.hidden) showStatus(hostedFailure);
       if (dialogue.hidden && !interact.hidden) interact.focus();
     } else {
-      showStatus("Try asking another way or choose a reply.");
+      showStatus(hostedFailure || "Try asking another way or choose a reply.");
     }
   });
   return refresh;
