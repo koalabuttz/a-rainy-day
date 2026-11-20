@@ -260,6 +260,18 @@ p {
 
 #say button:disabled { opacity: .65; }
 
+#question-review {
+  margin: 6px auto 0;
+  max-width: min(640px, 100%);
+  font: 13px/1.3 system-ui, sans-serif;
+  color: #ded1b7;
+}
+
+#say #question-review {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
 @media (max-width: 343px) {
   #dialogue { max-height: calc(100% - 18px); }
 }
@@ -347,6 +359,7 @@ p {
           </form>
         </section>
       </div>
+      <p id="question-review" hidden>Typed messages go to DeepSeek and may be reviewed to improve the game.</p>
       <p id="world-line" class="visually-hidden" aria-live="polite"></p>
       <p id="status" role="status">Opening the inn…</p>
       <button type="button" id="play" hidden>Play</button>
@@ -433,7 +446,20 @@ function bindDialogue(room, draw) {
   const question = document.querySelector("#question");
   const ask = form.querySelector("button");
   const reply = document.querySelector("#reply");
+  const reviewNotice = document.querySelector("#question-review");
   const endpoint = document.querySelector('meta[name="dialogue-endpoint"]')?.content;
+  const questionReview = endpoint === "https://a-rain-day-api.davidlewis.xyz/api/dialogue" &&
+    location.origin === "https://www.davidlewis.xyz" &&
+    ["/a-rainy-day/", "/a-rainy-day/index.html"].includes(location.pathname);
+  if (questionReview) {
+    const compact = matchMedia("(max-width: 663px)");
+    const placeReviewNotice = () => {
+      if (compact.matches) canvas.parentElement.after(reviewNotice);
+      else form.prepend(reviewNotice);
+    };
+    placeReviewNotice();
+    compact.addEventListener("change", placeReviewNotice);
+  }
   const decoder = new TextDecoder();
   const encoder = new TextEncoder();
   let rendered = "";
@@ -517,6 +543,9 @@ function bindDialogue(room, draw) {
     dialogue.toggleAttribute("data-frog-reveal", frogReveal);
     const kitchenCover = kitchenConversation && read(6) === "kitchen-keeper";
     form.hidden = kitchenConversation ? !kitchenCover : (labels.length < 2 && !guestConversation);
+    reviewNotice.hidden = !questionReview || dialogue.hidden || form.hidden || !read(6);
+    if (reviewNotice.hidden) question.removeAttribute("aria-describedby");
+    else question.setAttribute("aria-describedby", reviewNotice.id);
     question.placeholder = guestConversation || kitchenCover ? "Type…" : "Say something";
     speaker.textContent = name;
     line.textContent = text;
@@ -661,10 +690,12 @@ function bindDialogue(room, draw) {
       let result;
       const payload = { text, topics };
       if (recent?.revision === request.revision) payload.recent = recent.exchange;
+      const headers = { "Content-Type": "application/json" };
+      if (questionReview && !reviewNotice.hidden) headers["X-Rainy-Day-Question-Review"] = "v1";
       try {
         const response = await fetch(endpoint, {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers,
           body: JSON.stringify(payload),
           signal: request.controller.signal,
         });
