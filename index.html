@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="dialogue-endpoint" content="https://a-rain-day-api.davidlewis.xyz/api/dialogue">
+    <meta name="dialogue-endpoint" content="https://www.davidlewis.xyz/a-rainy-day/api/dialogue">
     <title>a rainy day</title>
     <style>:root {
   color-scheme: dark;
@@ -448,7 +448,11 @@ function bindDialogue(room, draw) {
   const reply = document.querySelector("#reply");
   const reviewNotice = document.querySelector("#question-review");
   const endpoint = document.querySelector('meta[name="dialogue-endpoint"]')?.content;
-  const questionReview = endpoint === "https://a-rain-day-api.davidlewis.xyz/api/dialogue" &&
+  const hostedEndpoint = [
+    "https://www.davidlewis.xyz/a-rainy-day/api/dialogue",
+    "https://a-rain-day-api.davidlewis.xyz/api/dialogue",
+  ].includes(endpoint);
+  const questionReview = hostedEndpoint &&
     location.origin === "https://www.davidlewis.xyz" &&
     ["/a-rainy-day/", "/a-rainy-day/index.html"].includes(location.pathname);
   if (questionReview) {
@@ -705,6 +709,7 @@ function bindDialogue(room, draw) {
       try {
         const response = await fetch(endpoint, {
           method: "POST",
+          credentials: hostedEndpoint ? "omit" : "same-origin",
           headers,
           body: JSON.stringify(payload),
           signal: request.controller.signal,
